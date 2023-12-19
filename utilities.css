@@ -1,0 +1,12 @@
+.container--sm {
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-grid {
+  display: grid;
+}

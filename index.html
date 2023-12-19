@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="utilities.css" />
+    <title>Frontend Mentor | Calculator app</title>
+  </head>
+  <body>
+    <div class="container--sm">
+      <main class="d-flex">
+        <section class="d-flex app-top">
+          <h1 class="app-title">calc</h1>
+          <div class="theme-switcher">
+            <p>Theme</p>
+            <div class="wrapper">
+              <div class="themes">
+                <p>1</p>
+                <p>2</p>
+                <p>3</p>
+              </div>
+
+              <div class="toggle-bg-btn">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="screen"></section>
+
+        <section class="keys d-grid">
+          <button class="key">7</button>
+          <button class="key">8</button>
+          <button class="key">9</button>
+          <button class="key delete">del</button>
+          <button class="key">4</button>
+          <button class="key">5</button>
+          <button class="key">6</button>
+          <button class="key add">+</button>
+          <button class="key">1</button>
+          <button class="key">2</button>
+          <button class="key">3</button>
+          <button class="key subtraction">-</button>
+          <button class="key">.</button>
+          <button class="key">0</button>
+          <button class="key division">/</button>
+          <button class="key multiplication">x</button>
+          <button class="key reset">Reset</button>
+          <button class="key eval">=</button>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
