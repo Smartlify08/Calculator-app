@@ -32,6 +32,19 @@
   --theme-2-key-bg-3: hsl(45, 7%, 89%);
   --theme-2-key-shadow-3: hsl(35, 11%, 61%);
   --theme-2-text-grayish-yellow: hsl(60, 10%, 19%);
+
+  /* Theme-3 */
+  --theme-3-bg: hsl(268, 75%, 9%);
+  --theme-3-keypad-bg: hsl(268, 71%, 12%);
+  --theme-3-screen-bg: hsl(281, 89%, 26%);
+  --theme-3-key-bg-1: hsl(176, 100%, 44%);
+  --theme-3-key-shadow-1: hsl(177, 92%, 70%);
+  --theme-3-key-bg-2: hsl(268, 47%, 21%);
+  --theme-3-key-shadow-2: hsl(290, 70%, 36%);
+  --theme-3-key-bg-3: hsl(281, 89%, 26%);
+  --theme-3-key-shadow-3: hsl(285, 91%, 52%);
+  --theme-3-text-light-yellow: hsl(52, 100%, 62%);
+  --theme-3-text-very-dark-blue: hsl(198, 20%, 13%);
 }
 
 body {

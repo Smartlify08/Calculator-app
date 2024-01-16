@@ -229,6 +229,12 @@ const themes = {
       equalsBtnBg: "#f96c5b",
       keyBtnBg: "#fff",
     },
+
+    shadow: {
+      keyBtnShadow: "0px 3px 0px 0px var(--theme-1-grayish-orange-key-shadow)",
+      resetBtnShadow: "0px 3px 0px 0px var(--theme-1-key-shadow-1);",
+      equalsBtnShadow: "0px 3px 0px 0px var(--theme-1-key-shadow-2);",
+    },
   },
   theme_2: {
     backgroundColor: "var(--theme-2-bg)",
@@ -241,14 +247,14 @@ const themes = {
     keyPadBg: "var(--theme-2-keypad-bg)",
 
     shadow: {
-      keyBtnShadow: "",
-      resetBtnShadow: "",
-      equalsBtnShadow: "",
+      keyBtnShadow: "0px 3px 0px 0px var(--theme-2-key-shadow-3)",
+      resetBtnShadow: "0px 3px 0px 0px var(--theme-2-key-shadow-1)",
+      equalsBtnShadow: "0px 3px 0px 0px var(--theme-2-key-shadow-2)",
     },
 
     hover: {
-      resetBtnBg: "#a2b3e1",
-      equalsBtnBg: "#F96C5B",
+      resetBtnBg: "#62B5BD",
+      equalsBtnBg: "#FF8B38",
       keyBtnBg: "#fff",
     },
   },
@@ -268,11 +274,13 @@ function updateTheme() {
     textColor,
     screenBg,
     keyPadBg,
+    shadow,
     hover,
   } = themes[currentTheme];
   numbers.forEach((number) => {
     number.style.backgroundColor = keyBgColor;
     number.style.color = keyTextColor;
+    number.style.boxShadow = shadow.keyBtnShadow;
     number.addEventListener("mouseenter", (e) => {
       number.style.backgroundColor = hover.keyBtnBg;
     });
@@ -283,6 +291,14 @@ function updateTheme() {
   signs.forEach((sign) => {
     sign.style.backgroundColor = keyBgColor;
     sign.style.color = keyTextColor;
+    sign.style.boxShadow = shadow.keyBtnShadow;
+
+    sign.addEventListener("mouseenter", (e) => {
+      sign.style.backgroundColor = hover.keyBtnBg;
+    });
+    sign.addEventListener("mouseleave", () => {
+      sign.style.backgroundColor = keyBgColor;
+    });
   });
   text.forEach((p) => {
     p.style.color = textColor;
@@ -308,10 +324,14 @@ function updateTheme() {
   });
 
   decimal.style.backgroundColor = keyBgColor;
+  decimal.style.boxShadow = shadow.keyBtnShadow;
   decimal.style.color = keyTextColor;
   resetBtn.style.backgroundColor = resetBtnColor;
+  resetBtn.style.boxShadow = shadow.resetBtnShadow;
   deleteBtn.style.backgroundColor = resetBtnColor;
+  deleteBtn.style.boxShadow = shadow.resetBtnShadow;
   equals.style.backgroundColor = equalsBtnColor;
+  equals.style.boxShadow = shadow.equalsBtnShadow;
   screen.style.backgroundColor = screenBg;
   theme_switcher.style.backgroundColor = keypad.style.backgroundColor =
     keyPadBg;
