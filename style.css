@@ -19,6 +19,19 @@
   --theme-1-text-grayish-blue: hsl(221, 14%, 31%);
   --white: hsl(0, 0%, 100%);
   --font: "League Spartan", sans-serif;
+
+  /* Theme-2 */
+
+  --theme-2-bg: hsl(0, 0%, 90%);
+  --theme-2-keypad-bg: hsl(0, 5%, 81%);
+  --theme-2-screen-bg: hsl(0, 0%, 93%);
+  --theme-2-key-bg-1: hsl(185, 42%, 37%);
+  --theme-2-key-shadow-1: hsl(185, 58%, 25%);
+  --theme-2-key-bg-2: hsl(25, 98%, 40%);
+  --theme-2-key-shadow-2: hsl(25, 99%, 27%);
+  --theme-2-key-bg-3: hsl(45, 7%, 89%);
+  --theme-2-key-shadow-3: hsl(35, 11%, 61%);
+  --theme-2-text-grayish-yellow: hsl(60, 10%, 19%);
 }
 
 body {
@@ -30,7 +43,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 0;
 }
 
 .container--sm {
@@ -44,22 +56,30 @@ main {
 
 main .d-flex.app-top {
   justify-content: space-between;
+  align-items: center;
 }
 
 .d-flex.app-top h1 {
   color: var(--white);
-  font-size: 18px;
+  font-size: 30px;
 }
 
 .d-flex.app-top .theme-switcher {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
+  position: relative;
 }
 
-.d-flex.app-top .theme-switcher p {
+.theme-switcher p {
   color: var(--white);
   text-transform: uppercase;
+}
+.theme-switcher > p:nth-of-type(1) {
+  font-size: 10px;
+  position: absolute;
+  left: -40px;
+  top: 15px;
 }
 .d-flex.app-top .wrapper {
   display: flex;
@@ -69,25 +89,67 @@ main .d-flex.app-top {
 
 .d-flex.app-top .wrapper .themes {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 15px;
 }
 
-.d-flex.app-top .wrapper .toggle-bg-btn {
-  width: 80px;
-  height: 30px;
-  background-color: var(--theme-1-screen-bg);
+.d-flex.app-top .wrapper .themes > p {
+  font-size: 10px;
+}
+
+.toggle-bg-btn {
+  width: 60px;
+  height: 22px;
+  background-color: var(--theme-1-keypad-bg);
   border-radius: 20px;
+  display: flex;
+  position: relative;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+.toggle-bg-btn .circle {
+  cursor: pointer;
+  position: absolute;
+  top: 4px;
+  left: 5px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: var(--theme-1-key-bg-toggle);
+  transition: all 0.2s ease-in;
+}
+.toggle-bg-btn > p {
+  /* visibility: hidden; */
+  width: 10px;
+  font-size: 9px;
+  color: #aaa;
+  text-align: center;
+}
+
+.theme-toggle {
+  transition: left 3s ease-in;
 }
 
 /* Screen */
 .screen {
   background-color: var(--theme-1-screen-bg);
-  padding: 20px;
+  padding: 0px;
   width: 400px;
-  height: 90px;
+  height: 100px;
   border-radius: 10px;
   color: #fff;
   text-align: right;
+}
+.current-operand {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  text-align: right;
+  width: 100%;
+  padding: 10px;
+  height: 100%;
+  font-size: 42px;
 }
 
 /* Keys */
@@ -102,7 +164,7 @@ main .d-flex.app-top {
   border-radius: 10px;
 }
 
-.key {
+button {
   cursor: pointer;
   border: none;
   display: flex;
@@ -120,13 +182,17 @@ main .d-flex.app-top {
   box-shadow: 0px 3px 0px 0px var(--theme-1-grayish-orange-key-shadow);
 }
 
-.key.delete {
+button:hover {
+  background-color: #ffffff;
+}
+
+button.delete {
   background-color: var(--theme-1-key-bg);
   color: var(--white);
   font-size: 18px;
   box-shadow: 0px 3px 0px 0px var(--theme-1-key-shadow-1);
 }
-.key.reset {
+button.reset {
   background-color: var(--theme-1-key-bg);
   color: var(--white);
   font-size: 18px;
@@ -134,7 +200,8 @@ main .d-flex.app-top {
   width: 100%;
   box-shadow: 0px 3px 0px 0px var(--theme-1-key-shadow-1);
 }
-.key.eval {
+
+button.equals {
   background-color: var(--theme-1-key-bg-toggle);
   color: var(--white);
   grid-column: 3/5;
