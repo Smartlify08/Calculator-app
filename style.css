@@ -36,7 +36,7 @@
   /* Theme-3 */
   --theme-3-bg: hsl(268, 75%, 9%);
   --theme-3-keypad-bg: hsl(268, 71%, 12%);
-  --theme-3-screen-bg: hsl(281, 89%, 26%);
+  --theme-3-screen-bg: hsl(268, 71%, 12%);
   --theme-3-key-bg-1: hsl(176, 100%, 44%);
   --theme-3-key-shadow-1: hsl(177, 92%, 70%);
   --theme-3-key-bg-2: hsl(268, 47%, 21%);
@@ -134,6 +134,7 @@ main .d-flex.app-top {
 }
 .toggle-bg-btn > p {
   /* visibility: hidden; */
+  opacity: 0;
   width: 10px;
   font-size: 9px;
   color: #aaa;
@@ -205,6 +206,10 @@ button.delete {
   font-size: 18px;
   box-shadow: 0px 3px 0px 0px var(--theme-1-key-shadow-1);
 }
+
+button.delete:hover {
+  background-color: #a2b3e1;
+}
 button.reset {
   background-color: var(--theme-1-key-bg);
   color: var(--white);
@@ -214,10 +219,46 @@ button.reset {
   box-shadow: 0px 3px 0px 0px var(--theme-1-key-shadow-1);
 }
 
+button.reset:hover {
+  background-color: #a2b3e1;
+}
+
 button.equals {
   background-color: var(--theme-1-key-bg-toggle);
   color: var(--white);
   grid-column: 3/5;
   width: 100%;
   box-shadow: 0px 3px 0px 0px var(--theme-1-key-shadow-2);
+}
+
+button.equals:hover {
+  background-color: #f96c5b;
+}
+
+button.equals,
+button.delete,
+button.reset,
+button {
+  transition: 0.2s ease-in;
+}
+
+/* Media Queries */
+
+@media (width > 0px) and (width < 768px) {
+  body {
+    height: 100vh;
+  }
+  main {
+    width: 320px;
+  }
+  .screen {
+    width: 320px;
+    height: 90px;
+    align-self: center;
+  }
+
+  button {
+    width: 60px;
+    font-size: 26px;
+  }
 }
