@@ -34,13 +34,18 @@ signs.forEach((sign) => {
     }
 
     appendSign(sign.textContent);
-
     evaluateOperation(sign.textContent);
   });
 });
 
 decimal.addEventListener("click", () => {
-  if (!currentOperandText.textContent.includes(".")) {
+  const currentOperand = currentOperandText.textContent;
+
+  if (
+    currentOperand === "" ||
+    currentOperand.charAt(currentOperand.length - 1) !== decimal.textContent
+  ) {
+    // If the conditions are met, add the decimal
     currentOperandText.textContent += decimal.textContent;
   }
 });
@@ -49,8 +54,8 @@ let numericResult = 0;
 
 equals.addEventListener("click", () => {
   let storeStr = currentOperandText.textContent;
-  if (currentOperandText.textContent.includes("x".toLowerCase())) {
-    storeStr = storeStr.replace("X", "*");
+  if (currentOperandText.textContent.includes("x")) {
+    storeStr = storeStr.replace("x", "*");
   }
   // Evaluate storeStr, check if leftOperand includes a comma, split it and join.
   let leftHandOperand = storeStr
@@ -85,11 +90,26 @@ function appendNumbers(number) {
   currentOperandText.textContent === defaultValue
     ? (currentOperandText.textContent = number)
     : (currentOperandText.textContent += number);
+  if (currentOperandText.textContent.includes(",")) {
+    currentOperandText.textContent = currentOperandText.textContent.replace(
+      ",",
+      ""
+    );
+  }
 }
 
 // Append sign to screen
+
 function appendSign(sign) {
+  let str = "";
+  let firstOccurenceOfSign = currentOperandText.textContent.indexOf(sign);
   currentOperandText.textContent = `${currentOperandText.textContent} ${sign} `;
+  if (currentOperandText.textContent.includes(",")) {
+    currentOperandText.textContent = currentOperandText.textContent.replace(
+      ",",
+      ""
+    );
+  }
 }
 
 /**
