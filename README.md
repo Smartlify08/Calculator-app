@@ -50,8 +50,6 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
 Using ternary operations can be useful at times, but the traditional if statements will also come in handy, depending on what is trying to be achieved.
 
 I also learned how to use destructuring to extract data from the theme_data, such as background colors, colors, e.t.c.
